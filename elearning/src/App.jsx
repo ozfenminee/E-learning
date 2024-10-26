@@ -3,6 +3,8 @@ import { Navbar } from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Hero from './components/Hero/Hero'
 import  Numbercounter from './components/Numbercounter/Numbercounter'
+import { WhyChooseUs } from './components/WhyChooseUs/WhyChooseUs'
+import { Banner } from './components/Banner/Banner'
 
 import './App.css'
 
@@ -14,6 +16,8 @@ function App() {
     <Navbar/>
     <Hero/>
     <Numbercounter/>
+    <WhyChooseUs/>
+    <Banner/>
     <Footer/>
    </div>
   )
