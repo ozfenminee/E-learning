@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import { Navbar } from './components/Navbar/Navbar'
-import Footer from './components/Footer/Footer'
-import Hero from './components/Hero/Hero'
-import  Numbercounter from './components/Numbercounter/Numbercounter'
-import { WhyChooseUs } from './components/WhyChooseUs/WhyChooseUs'
-import { Banner } from './components/Banner/Banner'
+import { BrowserRouter,Route,Routes } from "react-router-dom";
 
-import './App.css'
+import Home from "./pages/Home/Home";
+import Aboutus from "./pages/Aboutus/Aboutus";
+import Contact from "./pages/Contact/Contact";
+import ForStudents from "./pages/ForStudents/ForStudents";
+import Resources from "./pages/Resources/Resources";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-   <div className='overflow-x-hidden'> 
-    <Navbar/>
-    <Hero/>
-    <Numbercounter/>
-    <WhyChooseUs/>
-    <Banner/>
-    <Footer/>
-   </div>
-  )
+function App(){
+return(
+  <>
+  <BrowserRouter>
+ 
+  <Routes>
+    <Route path='/' element={<Home/>}/>
+    <Route path='/aboutus' element={<Aboutus/>}/>
+    <Route path='/contact' element={<Contact/>}/>
+    <Route path='/forstudents' element={<ForStudents/>}/>
+    <Route path='/resources' element={<Resources/>}/>
+  </Routes>
+ 
+  </BrowserRouter>
+  </>
+)
 }
-
-export default App
+export default App;

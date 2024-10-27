@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faSearch, faUser, faCaretDown, faBars } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -37,13 +38,13 @@ export const Navbar = () => {
     <div>
       {/* Desktop Navbar */}
       <div className="hidden md:flex items-center justify-between p-6 bg-yellow-300 text-white relative w-full h-16">
-        {/* Sol kısım: Icon ve başlık */}
+        {/* Left section: Icon and title */}
         <div className="flex items-center">
           <FontAwesomeIcon icon={faDesktop} className="mr-2" />
           <span className="text-lg font-bold">E-Learning</span>
         </div>
 
-        {/* Orta kısım: Arama çubuğu */}
+        {/* Center section: Search bar */}
         <div className="flex-1 text-center">
           <div className="relative w-3/4 mx-auto">
             <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-2.5 text-yellow-500" />
@@ -55,15 +56,15 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Sağ kısım: Navigasyon ve profil */}
+        {/* Right section: Navigation and profile */}
         <div className="flex gap-4 items-center">
-          <span className="cursor-pointer hover:text-yellow-800">Home</span>
-          <span className="cursor-pointer hover:text-yellow-800">For Students</span>
-          <span className="cursor-pointer hover:text-yellow-800">Resources</span>
-          <span className="cursor-pointer hover:text-yellow-800">About Us</span>
-          <span className="cursor-pointer hover:text-yellow-800">Contact</span>
+          <a href="/" className="cursor-pointer hover:text-yellow-800">Home</a>
+          <Link to="/forstudents" className="cursor-pointer hover:text-yellow-800">For Students</Link>
+          <Link to="/resources" className="cursor-pointer hover:text-yellow-800">Resources</Link>
+          <Link to="/aboutus" className="cursor-pointer hover:text-yellow-800">About Us</Link>
+          <Link to="/contact" className="cursor-pointer hover:text-yellow-800">Contact</Link>
 
-          {/* Profil ve dropdown */}
+          {/* Profile and dropdown */}
           <div className="relative navbar-profile" onClick={toggleDropdown}>
             <FontAwesomeIcon icon={faUser} className="mr-1" />
             <FontAwesomeIcon icon={faCaretDown} />
@@ -98,11 +99,11 @@ export const Navbar = () => {
             >
               X
             </button>
-            <span className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>Home</span>
-            <span className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>For Students</span>
-            <span className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>Resources</span>
-            <span className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>About Us</span>
-            <span className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>Contact</span>
+            <a href="/" className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>Home</a>
+            <a href="/forstudents" className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>For Students</a>
+            <a href="/resources" className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>Resources</a>
+            <a href="/aboutus" className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>About Us</a>
+            <a href="/contact" className="cursor-pointer hover:text-yellow-800 py-2 border-b border-yellow-300" onClick={toggleSidebar}>Contact</a>
             <div className="mt-auto">
               <FontAwesomeIcon icon={faUser} className="mr-1" />
               <p onClick={logout} className="cursor-pointer text-red-600 hover:underline">Sign Out</p>
@@ -110,11 +111,12 @@ export const Navbar = () => {
           </div>
         </div>
       )}
-      {/* Sidebar kapanma animasyonu */}
+
+      {/* Sidebar close animation */}
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-10"
-          onClick={toggleSidebar} // Karanlık alana tıklayınca sidebar kapansın
+          onClick={toggleSidebar}
         />
       )}
     </div>
