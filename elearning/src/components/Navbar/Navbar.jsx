@@ -59,10 +59,10 @@ export const Navbar = () => {
         {/* Right section: Navigation and profile */}
         <div className="flex gap-4 items-center">
           <a href="/" className="cursor-pointer hover:text-yellow-800">Home</a>
-          <Link to="/forstudents" className="cursor-pointer hover:text-yellow-800">For Students</Link>
-          <Link to="/resources" className="cursor-pointer hover:text-yellow-800">Resources</Link>
-          <Link to="/aboutus" className="cursor-pointer hover:text-yellow-800">About Us</Link>
-          <Link to="/contact" className="cursor-pointer hover:text-yellow-800">Contact</Link>
+          <a href="/forstudents" className="cursor-pointer hover:text-yellow-800">For Students</a>
+          <a href="/resources" className="cursor-pointer hover:text-yellow-800">Resources</a>
+          <a href="/aboutus" className="cursor-pointer hover:text-yellow-800">About Us</a>
+          <a href="/contact" className="cursor-pointer hover:text-yellow-800">Contact</a>
 
           {/* Profile and dropdown */}
           <div className="relative navbar-profile" onClick={toggleDropdown}>
