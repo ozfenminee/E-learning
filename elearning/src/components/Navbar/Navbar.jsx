@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faSearch, faUser, faCaretDown, faBars } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../usercontext';
 
 export const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { user } = useUser();
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -17,7 +20,8 @@ export const Navbar = () => {
 
   const logout = () => {
     alert('Çıkış yapılıyor...');
-    // Çıkış işlemi burada yapılabilir
+    // Perform logout actions here (if any)
+    navigate('/login'); // Redirect to the login page
   };
 
   useEffect(() => {

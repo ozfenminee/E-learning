@@ -9,12 +9,12 @@ import { addDoc,collection } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDE3CkiGTICCvIRnUL_Hg4vEzzP_m6upic",
-  authDomain: "netflix-clone-1b694.firebaseapp.com",
-  projectId: "netflix-clone-1b694",
-  storageBucket: "netflix-clone-1b694.appspot.com",
-  messagingSenderId: "123684655350",
-  appId: "1:123684655350:web:d37ef2eff92e65baf79cd7"
+    apiKey: "AIzaSyC7DxG_WeXiJCyc8RpDKGn-gAINtWUY6nU",
+    authDomain: "elearning-e3557.firebaseapp.com",
+    projectId: "elearning-e3557",
+    storageBucket: "elearning-e3557.appspot.com",
+    messagingSenderId: "541077710677",
+    appId: "1:541077710677:web:6d1871eb25b32456f371dc"
 };
 
 // Initialize Firebase
